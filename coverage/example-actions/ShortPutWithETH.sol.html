@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for example-actions/ShortPutWithETH.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">example-actions/</a> ShortPutWithETH.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">89.74% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>35/39</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">60% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>6/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">87.5% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>7/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>36/40</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+pragma solidity &gt;=0.7.2;
+pragma experimental ABIEncoderV2;
+&nbsp;
+import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
+import {GammaUtils} from "../utils/GammaUtils.sol";
+import {RollOverBase} from "../utils/RollOverBase.sol";
+&nbsp;
+// use airswap to short / long
+import {AirswapUtils} from "../utils/AirswapUtils.sol";
+import {CompoundUtils} from "../utils/CompoundUtils.sol";
+import {SwapTypes} from "../libraries/SwapTypes.sol";
+import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/SafeERC20.sol";
+import {SafeMath} from "@openzeppelin/contracts/math/SafeMath.sol";
+&nbsp;
+import {IController} from "../interfaces/IController.sol";
+import {IAction} from "../interfaces/IAction.sol";
+import {IOToken} from "../interfaces/IOToken.sol";
+&nbsp;
+/**
+ * This is an Short Action template that inherit lots of util functions to "Short" an option.
+ * You can remove the function you don't need.
+ */
+contract ShortPutWithETH is IAction, OwnableUpgradeable, CompoundUtils, AirswapUtils, RollOverBase, GammaUtils {
+  using SafeERC20 for IERC20;
+  using SafeMath for uint256;
+&nbsp;
+  bool vaultClosed;
+&nbsp;
+  /// @dev 100%
+  uint256 public constant BASE = 10000;
+&nbsp;
+  /// @dev amount of assets locked in Opyn
+  uint256 public lockedAsset;
+&nbsp;
+  /// @dev time at which the last rollover was called
+  uint256 public rolloverTime;
+&nbsp;
+  /// @dev address of the vault 
+  address public immutable vault;
+&nbsp;
+  /// @dev address of the ERC20 asset. Do not use non-ERC20s
+  address public immutable asset;
+&nbsp;
+  /// @dev address of usdc 
+  address public immutable usdc;
+&nbsp;
+  /// @dev address of cUSDC
+  address public immutable cusdc;
+&nbsp;
+  /** 
+  * @notice constructor 
+  * @param _vault the address of the vault contract
+  * @param _asset address of the ERC20 asset
+  * @param _cETH address of cETH
+  * @param _usdc address of usdc
+  * @param _cusdc address of cUSDC
+  * @param _airswap address of airswap swap contract 
+  * @param _controller address of Opyn controller contract
+  * @param _comptroller address of Compound controller contract
+  */
+  constructor(
+    address _vault,
+    address _asset, // weth
+    address _cETH,
+    address _usdc,
+    address _cusdc,
+    address _airswap,
+    address _controller,
+    address _comptroller
+  ) {
+    vault = _vault;
+    asset = _asset;
+    usdc = _usdc;
+    cusdc = _cusdc;
+&nbsp;
+    // enable vault to take all the asset back and re-distribute.
+    IERC20(_asset).safeApprove(_vault, uint256(-1));
+&nbsp;
+    _initGammaUtil(_controller);
+&nbsp;
+    // enable pool contract to pull asset from this contract to mint options.
+    address pool = controller.pool();
+&nbsp;
+    address whitelist = controller.whitelist();
+&nbsp;
+    // allow opyn's pool to transfer usdc
+    IERC20(_usdc).safeApprove(pool, uint256(-1));
+&nbsp;
+    _initSwapContract(_airswap);
+    // assuming asset is weth
+    _initCompoundUtils(_comptroller, _asset, _cETH);
+&nbsp;
+    _initRollOverBase(whitelist);
+    __Ownable_init();
+&nbsp;
+    _openGammaVault(0); // vault type 0
+  }
+&nbsp;
+  modifier onlyVault() {
+    require(msg.sender == vault, "!VAULT");
+&nbsp;
+    _;
+  }
+&nbsp;
+  /**
+   * @notice returns the net worth of this strategy = current balance of the action + collateral deposited into Opyn's vault. 
+   * @dev For a more realtime tracking of value, we reccomend calculating the current value as: 
+   * currentValue = balance + collateral - (numOptions * cashVal), where: 
+   * balance = current balance in the action
+   * collateral = collateral deposited into Opyn's vault 
+   * numOptions = number of options sold
+   * cashVal = cash value of 1 option sold (for puts: Strike - Current Underlying Price, for calls: Current Underlying Price - Strike)
+   */
+<span class="fstat-no" title="function not covered" >  function currentValue() external view override returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >    uint256 assetBalance = IERC20(asset).balanceOf(address(this));</span>
+<span class="cstat-no" title="statement not covered" >    return assetBalance.add(lockedAsset);</span>
+    // todo: consider cETH value that's used as collateral
+  }
+&nbsp;
+  /**
+   * @notice the function that the vault will call when the new round is starting. Once this is called, the funds will be sent from the vault to this action. 
+   * @dev this does NOT automatically mint options and sell them. This merely receives funds. Before this function is called, the owner should have called 
+   * `commitOToken` to decide on what Otoken is being sold. This function can only be called after the commitment period has passed since the call to `commitOToken`.
+   * Once this has been called, the owner should call `borrowMintAndTradeOTC`. If the owner doesn't mint and sell the options within 1 day after rollover has been 
+   * called, someone can call closePosition and transfer the funds back to the vault. If that happens, the owner needs to commit to a new otoken and call rollover again. 
+   */
+  function rolloverPosition() external override onlyVault {
+    _rollOverNextOTokenAndActivate(); // this function can only be called when the action is `Committed`
+    rolloverTime = block.timestamp;
+  }
+&nbsp;
+  /**
+   * @notice the function will return when someone can close a position. 1 day after rollover,
+   * if the option wasn't sold, anyone can close the position and send funds back to the vault. 
+   */
+  function canClosePosition() public view returns (bool) {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (otoken != address(0) &amp;&amp; lockedAsset != 0) {
+      return _canSettleVault();
+    }
+<span class="cstat-no" title="statement not covered" >    return block.timestamp &gt; rolloverTime + 1 days;</span>
+  }
+  
+&nbsp;
+  /**
+   * @notice the function that the vault will call when the round is over. This will settle the vault in Opyn, repay the usdc debt in Compound
+   * and withdraw WETH supplied to Compound. There are 2 main risks involved in this strategy:
+   * 1. If the option expired OTM, then all the collateral is returned to this action. If not, some portion of the collateral is deducted 
+   * by the Opyn system. 
+   * 2. If the ETH price fluctuates a lot, the position in Compound could get liquidated in which case all the collateral may not be 
+   * returned even if the option expires OTM. 
+   * @dev this can be called after 1 day rollover was called if no options have been sold OR if the sold options expired. 
+   */
+  function closePosition() external override onlyVault {
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(canClosePosition(), "Cannot close position");
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (_canSettleVault()) {
+      // get back usdc from settlement
+      _settleGammaVault();
+&nbsp;
+      // repay USD, so we can get back ETH from Compound
+      // todo: prepare contract with extra usd to get back full amount
+      uint256 repayAmount = IERC20(usdc).balanceOf(address(this));
+      _repayERC20(usdc, cusdc, repayAmount);
+      // _repayERC20(usdc, cusdc, uint256(-1)); // to pay back full amount, use this line
+&nbsp;
+      // get back ETH (and wrap to WETH)
+      // todo: change to use full balance once we can repay full debt
+      uint256 wethToRedeem = (IERC20(address(cEth)).balanceOf(address(this)) * 995) / 1000;
+      _redeemWETH(wethToRedeem);
+      lockedAsset = 0;
+    }
+&nbsp;
+    // set action state.
+    _setActionIdle();
+  }
+&nbsp;
+  /**
+   * @notice lends the WETH on compound, borrows USDC against that and mints otokens against the borrowed usdc. 
+   * sells the by filling an order on AirSwap. this can only be done in "activated" state which is achievable by 
+   * calling `rolloverPosition`
+   */
+  function borrowMintAndTradeOTC(
+    uint256 _supplyWethAmount,
+    uint256 _collateralAmount,
+    uint256 _otokenAmount,
+    SwapTypes.Order memory _order
+  ) external onlyOwner onlyActivated {
+    _supplyWeth(_supplyWethAmount);
+    lockedAsset = lockedAsset.add(_supplyWethAmount);
+    _borrowERC20(cusdc, _collateralAmount);
+&nbsp;
+    // mint otoken using the util function
+    _mintOTokens(usdc, _collateralAmount, otoken, _otokenAmount);
+    _fillAirswapOrder(_order);
+  }
+&nbsp;
+  /**
+   * @notice checks if the current vault can be settled
+   */
+  function _canSettleVault() internal view returns (bool) {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (lockedAsset != 0 &amp;&amp; otoken != address(0)) {
+      return controller.isSettlementAllowed(otoken);
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return false;</span>
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jul 21 2021 15:06:33 GMT-0700 (Pacific Daylight Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
