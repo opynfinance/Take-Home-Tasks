@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for proxy/CTokenProxy.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">proxy/</a> CTokenProxy.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/21</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/21</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+pragma solidity &gt;=0.7.2;
+pragma experimental ABIEncoderV2;
+&nbsp;
+import {IVault} from "../interfaces/IVault.sol";
+import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import {ICTokenERC20} from "../interfaces/ICToken.sol";
+import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/SafeERC20.sol";
+import {SafeMath} from "@openzeppelin/contracts/math/SafeMath.sol";
+&nbsp;
+/**
+ * if you have a vault which is using cToken as asset
+ * u can use this proxy to help people deposit or withdraw
+ */
+contract CTokenProxy {
+  using SafeERC20 for IVault;
+  using SafeERC20 for IERC20;
+&nbsp;
+  IVault immutable vault;
+  IERC20 immutable underlying;
+  ICTokenERC20 immutable cToken;
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor(</span>
+    address _vault,
+    address _underlying,
+    address _cToken
+  ) {
+<span class="cstat-no" title="statement not covered" >    vault = IVault(_vault)</span>;
+<span class="cstat-no" title="statement not covered" >    cToken = ICTokenERC20(_cToken)</span>;
+<span class="cstat-no" title="statement not covered" >    underlying = IERC20(_underlying)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    IERC20(_cToken).safeApprove(_vault, uint256(-1))</span>;
+<span class="cstat-no" title="statement not covered" >    IERC20(_underlying).safeApprove(_cToken, uint256(-1))</span>;
+  }
+&nbsp;
+  /**
+   * @notice wrap into ctoken and then deposit into the vault
+   */
+<span class="fstat-no" title="function not covered" >  function depositUnderlying(uint256 _amount) external {</span>
+<span class="cstat-no" title="statement not covered" >    underlying.safeTransferFrom(msg.sender, address(this), _amount)</span>;
+<span class="cstat-no" title="statement not covered" >    cToken.mint(_amount)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    uint256 cTokenBalance = cToken.balanceOf(address(this));</span>
+<span class="cstat-no" title="statement not covered" >    vault.deposit(cTokenBalance)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    uint256 shares = vault.balanceOf(address(this));</span>
+<span class="cstat-no" title="statement not covered" >    vault.safeTransfer(msg.sender, shares)</span>;
+  }
+&nbsp;
+  /**
+   * @dev register for a fair deposit
+   * users will then be able to use claim shares on the vault contract to get their shares
+   */
+<span class="fstat-no" title="function not covered" >  function registerDepositUnderlying(uint256 _amount) external {</span>
+<span class="cstat-no" title="statement not covered" >    underlying.safeTransferFrom(msg.sender, address(this), _amount)</span>;
+<span class="cstat-no" title="statement not covered" >    cToken.mint(_amount)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    uint256 cTokenBalance = cToken.balanceOf(address(this));</span>
+<span class="cstat-no" title="statement not covered" >    vault.registerDeposit(cTokenBalance, msg.sender)</span>;
+  }
+&nbsp;
+  /**
+   * @notice Withdraws ETH from vault using vault shares.
+   * @param _shares is the number of vault shares to be burned
+   */
+<span class="fstat-no" title="function not covered" >  function withdrawUnderlying(uint256 _shares) external {</span>
+<span class="cstat-no" title="statement not covered" >    vault.safeTransferFrom(msg.sender, address(this), _shares)</span>;
+&nbsp;
+    // withdraw from vault and get weth
+<span class="cstat-no" title="statement not covered" >    vault.withdraw(_shares)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    uint256 cTokenBalance = cToken.balanceOf(address(this));</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    cToken.redeem(cTokenBalance)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    uint256 underlyingBalance = underlying.balanceOf(address(this));</span>
+<span class="cstat-no" title="statement not covered" >    underlying.transfer(msg.sender, underlyingBalance)</span>;
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jul 21 2021 15:06:33 GMT-0700 (Pacific Daylight Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
