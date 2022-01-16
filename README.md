@@ -34,17 +34,3 @@ To test the contracts, from project root run the following:
 ```shell
 npm run test
 ```
-
-### Mainnet fork test
-
-```shell
-npm run test:fork
-```
-
-## Coverage
-
-Generate test coverage report
-
-```shell
-npm run test:coverage
-```
