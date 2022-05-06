@@ -2,11 +2,11 @@
 
 pragma solidity ^0.7.2;
 
-import { SafeMath } from '@openzeppelin/contracts/math/SafeMath.sol';
+import {SafeMath} from "@openzeppelin/contracts/math/SafeMath.sol";
 
-import { ICurve } from '../interfaces/ICurve.sol';
-import { IOracle } from "../interfaces/IOracle.sol";
-import { IStakeDao } from "../interfaces/IStakeDao.sol";
+import {ICurve} from "../interfaces/ICurve.sol";
+import {IOracle} from "../interfaces/IOracle.sol";
+import {IStakeDao} from "../interfaces/IStakeDao.sol";
 
 /**
  * Error Codes
